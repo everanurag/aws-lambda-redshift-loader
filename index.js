@@ -1130,7 +1130,7 @@ exports.handler = function(event, context) {
 		if (clusterInfo.clusterDB) {
 		    dbString = dbString + '/' + clusterInfo.clusterDB.S;
 		}
-		if (clusterInfo.useSSL && clusterInfo.useSSL.BOOL === 'true') {
+		if (clusterInfo.useSSL && clusterInfo.useSSL.BOOL) {
 		    dbString = dbString + '?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory';
 		}
 		console.log("Connecting to Database " + clusterInfo.clusterEndpoint.S + ":" + clusterInfo.clusterPort.N);
